@@ -33,27 +33,23 @@ export default function Services() {
             </Typography>
           </Box>
           <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2 }}>
-            <Box
-              sx={CardStyle}
-            >
+
+            <Box sx={CardStyle}>
+
               <ServiceBox
                 icon="roller"
                 title="EXPERIENCIAS "
                 subtitle="Realizamos talleres, catas de café, visitas a fincas y espacios donde podamos conocer y disfrutar del mundo del cafe de especialidad."
               />
             </Box>
-            <Box
-              sx={CardStyle}
-            >
+            <Box sx={CardStyle}>
               <ServiceBox
                 icon="monitor"
                 title="EDUCACIÓN"
                 subtitle="Cursos, capacitaciones, entrenamiento y asesorías relacionadas a las disciplinas del café y su aplicación al mercado nacional e internacional"
               />
             </Box>
-            <Box
-              sx={CardStyle}
-            >
+            <Box sx={CardStyle}>
               <ServiceBox
                 icon="browser"
                 title="EMPRESARIAL"
@@ -63,14 +59,19 @@ export default function Services() {
           </Box>
         </Box>
       </Box>
-      <Box sx={{ mb: 6, textAlign: isSmallScreen ? "center" : "center" }}>
-        <Typography variant="h3" sx={TypographyStyle}>
-          Marcas que confian en nosotros
-        </Typography>
-      </Box>
-      <Box sx={{ py: 6 }}>
+      <Box id="allied_brands" sx={{ backgroundColor: "white", py: 8 }}>
         <Box className="container">
-          <ClientSlider />
+          <Box sx={{ mb: 6, textAlign: isSmallScreen ? "center" : "center" }}>
+            <Typography variant="h3" sx={TypographyStyle}>
+              Marcas que confian en nosotros
+            </Typography>
+          </Box>
+          <Box sx={{ py: 6 }}>
+            <Box className="container">
+              <ClientSlider />
+            </Box>
+          </Box>
+
         </Box>
       </Box>
     </Box>

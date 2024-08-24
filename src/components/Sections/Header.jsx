@@ -1,11 +1,19 @@
 import React from "react";
-import { Box, Typography, Button } from "@mui/material";
-
+import {
+  Box,
+  Typography,
+  Button,
+  useTheme,
+  useMediaQuery,
+} from "@mui/material";
 import Logo from "../../assets/img/LOGO CIRCA.png";
 import Logotext from "../../assets/img/LOGO CIRCA TEXTO.png";
 import Logoimg from "../../assets/img/LOGO SOLO.png";
 
 export default function CoffeeSection() {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <Box id="home">
       <Box className="container" sx={{ paddingTop: "20px" }}>
@@ -27,6 +35,28 @@ export default function CoffeeSection() {
               textAlign: { md: "left", xs: "center" },
             }}
           >
+            {isSmallScreen && (
+              <Box
+                sx={{
+                  flex: 1,
+                  display: { xs: "flex", md: "none" },
+                  justifyContent: "center",
+                  alignItems: "center",
+                  mt: { md: 0, xs: 0 },
+                }}
+              >
+                <Box
+                  component="img"
+                  src={Logoimg}
+                  alt="Coffee"
+                  sx={{
+                    maxWidth: "100%",
+                    height: "auto",
+                    borderRadius: "0px",
+                  }}
+                />
+              </Box>
+            )}
             <Box
               component="img"
               src={Logotext}
@@ -40,7 +70,8 @@ export default function CoffeeSection() {
               Tocamos y transformamos la vida de las personas alrededor de una
               taza de café.
             </Typography>
-            <Button
+
+            {/* <Button
               variant="contained"
               sx={{
                 bgcolor: "#8b4513",
@@ -52,7 +83,7 @@ export default function CoffeeSection() {
               }}
             >
               MÁS INFORMACIÓN
-            </Button>
+            </Button> */}
           </Box>
           <Box
             sx={{

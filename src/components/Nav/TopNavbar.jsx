@@ -1,83 +1,67 @@
-import React, { useEffect, useState } from "react";
-import { styled } from "@mui/system";
-import {
-  Box,
-  IconButton,
-  List,
-  ListItem,
-  Link,
-  useTheme,
-  useMediaQuery,
-} from "@mui/material";
+import React, {useEffect, useState} from 'react'
+import {styled} from '@mui/system'
+import {Box, IconButton, List, ListItem, Link, useTheme, useMediaQuery} from '@mui/material'
 
-import Sidebar from "../Nav/Sidebar";
-import Backdrop from "../Elements/Backdrop";
-import LogoIcon from "../../assets/svg/Logo";
-import BurgerIcon from "../../assets/svg/BurgerIcon";
+import Sidebar from '../Nav/Sidebar'
+import Backdrop from '../Elements/Backdrop'
+import LogoIcon from '../../assets/svg/Logo'
+import BurgerIcon from '../../assets/svg/BurgerIcon'
 
 export default function TopNavbar() {
-  const [y, setY] = useState(window.scrollY);
-  const [sidebarOpen, toggleSidebar] = useState(false);
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-
+  const [y, setY] = useState(window.scrollY)
+  const [sidebarOpen, toggleSidebar] = useState(false)
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'))
 
   useEffect(() => {
-    const handleScroll = () => setY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => setY(window.scrollY)
+    window.addEventListener('scroll', handleScroll)
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   return (
     <>
       <Sidebar sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
       {sidebarOpen && <Backdrop toggleSidebar={toggleSidebar} />}
-      <Wrapper sx={{ height: y > 100 ? "60px" : "80px" }}>
+      <Wrapper sx={{height: y > 100 ? '60px' : '80px'}}>
         <NavInner isMobile={isMobile}>
           {isMobile ? (
-            <IconButton
-              onClick={() => toggleSidebar(!sidebarOpen)}
-              color="inherit"
-            >
+            <IconButton onClick={() => toggleSidebar(!sidebarOpen)} color='inherit'>
               <BurgerIcon />
             </IconButton>
           ) : (
-            <Box display="flex">
-              <List sx={{ display: "flex", margin: 0, padding: 0 }}>
+            <Box display='flex'>
+              <List sx={{display: 'flex', margin: 0, padding: 0}}>
                 {[
-                  { title: "INICIO", id: "home" },
-                  { title: "SERVICIOS", id: "services" },
-                  { title: "MARCAS ALIADAS", id: "allied_brands" },
-                  { title: "NOSOTROS", id: "projects" },
-                  { title: "CONTACTANOS", id: "contact" },
-                ].map(({ title, id }) => (
-                  <ListItem
-                    key={id}
-                    sx={{ display: "inline-block", padding: 0 }}
-                  >
+                  {title: 'INICIO', id: 'home'},
+                  {title: 'SERVICIOS', id: 'services'},
+                  {title: 'MARCAS ALIADAS', id: 'allied_brands'},
+                  {title: 'NOSOTROS', id: 'projects'},
+                  {title: 'CONTACTANOS', id: 'contact'},
+                ].map(({title, id}) => (
+                  <ListItem key={id} sx={{display: 'inline-block', padding: 0}}>
                     <Link
-                      onClick={(e) => {
-                        e.preventDefault();
-                        const target = document.getElementById(id);
+                      onClick={e => {
+                        e.preventDefault()
+                        const target = document.getElementById(id)
                         if (target) {
-                          target.scrollIntoView({ behavior: "smooth" });
+                          target.scrollIntoView({behavior: 'smooth'})
                         }
                       }}
                       href={`#${id}`}
                       sx={{
-                        padding: "10px 15px",
-                        color: "#834227",
-                        textDecoration: "none",
-                        fontWeight: "bold",
-                        fontSize: "1.5rem",
-                        whiteSpace: "nowrap",
-                        "&:hover": {
-                          color: "#61300d",
+                        padding: '10px 15px',
+                        color: '#834227',
+                        textDecoration: 'none',
+                        fontWeight: 'bold',
+                        fontSize: '1.5rem',
+                        whiteSpace: 'nowrap',
+                        '&:hover': {
+                          color: '#61300d',
                         },
-                      }}
-                    >
+                      }}>
                       {title}
                     </Link>
                   </ListItem>
@@ -89,35 +73,34 @@ export default function TopNavbar() {
         <BottomBar />
       </Wrapper>
     </>
-  );
+  )
 }
 
-const Wrapper = styled(Box)(({ theme }) => ({
-  width: "100%",
-  position: "relative",
+const Wrapper = styled(Box)(({theme}) => ({
+  width: '100%',
+  position: 'relative',
   top: 0,
   left: 0,
   zIndex: 999,
-  backgroundColor: "white",
-  boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
-  transition: "height 0.3s ease",
-}));
+  backgroundColor: 'white',
+  boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
+  transition: 'height 0.3s ease',
+}))
 
-const NavInner = styled(Box)(({ theme, isMobile }) => ({
-  position: "relative",
-  height: "100%",
-  display: "flex",
-  justifyContent: isMobile ? "flex-end" : "center",
-  alignItems: "center",
-  padding: "0 20px",
-}));
+const NavInner = styled(Box)(({theme, isMobile}) => ({
+  position: 'relative',
+  height: '100%',
+  display: 'flex',
+  justifyContent: isMobile ? 'flex-end' : 'center',
+  alignItems: 'center',
+  padding: '0 20px',
+}))
 
-const BottomBar = styled(Box)(({ theme }) => ({
-  height: "7px", // Ajusta el tamaño de la barra aquí
-  backgroundColor: "#834227",
-  width: "100%",
-  position: "relative",
+const BottomBar = styled(Box)(({theme}) => ({
+  height: '7px', // Ajusta el tamaño de la barra aquí
+  backgroundColor: '#834227',
+  width: '100%',
+  position: 'relative',
   bottom: 0,
   left: 0,
-}));
-
+}))

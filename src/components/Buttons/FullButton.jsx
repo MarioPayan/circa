@@ -1,25 +1,25 @@
-import React from 'react';
-import { styled } from '@mui/system';
-import { Button } from '@mui/material';
+import React from 'react'
+import {styled} from '@mui/system'
+import {Button} from '@mui/material'
 
 // Componente FullButton
-export default function FullButton({ title, action, border }) {
+export default function FullButton({title, action, border}) {
   return (
     <Wrapper
-      variant="contained"
+      variant='contained'
       onClick={action ? () => action() : null}
       border={border} // Prop usado para estilizar el componente
     >
       {title}
     </Wrapper>
-  );
+  )
 }
 
 // Componente estilizado usando @mui/system
 const Wrapper = styled(Button, {
   // Asegura que el prop `border` no se pase al DOM
-  shouldForwardProp: (prop) => prop !== 'border'
-})(({ border }) => ({
+  shouldForwardProp: prop => prop !== 'border',
+})(({border}) => ({
   border: border ? '1px solid #707070' : '1px solid #7620ff',
   backgroundColor: border ? 'transparent' : '#7620ff',
   width: '100%',
@@ -34,4 +34,4 @@ const Wrapper = styled(Button, {
   cursor: 'pointer',
   outline: 'none',
   textTransform: 'none',
-}));
+}))

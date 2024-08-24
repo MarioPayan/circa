@@ -4,8 +4,15 @@ import {Box, IconButton, List, ListItem, Link, useTheme, useMediaQuery} from '@m
 
 import Sidebar from '../Nav/Sidebar'
 import Backdrop from '../Elements/Backdrop'
-import LogoIcon from '../../assets/svg/Logo'
 import BurgerIcon from '../../assets/svg/BurgerIcon'
+
+const sections = [
+  {title: 'INICIO', id: 'home'},
+  {title: 'SERVICIOS', id: 'services'},
+  {title: 'MARCAS ALIADAS', id: 'allied_brands'},
+  {title: 'NOSOTROS', id: 'projects'},
+  {title: 'CONTACTANOS', id: 'contact'},
+]
 
 export default function TopNavbar() {
   const [y, setY] = useState(window.scrollY)
@@ -21,6 +28,13 @@ export default function TopNavbar() {
     }
   }, [])
 
+  const goToElement = id => {
+    const target = document.getElementById(id)
+    if (target) {
+      target.scrollIntoView()
+    }
+  }
+
   return (
     <>
       <Sidebar sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
@@ -34,22 +48,10 @@ export default function TopNavbar() {
           ) : (
             <Box display='flex'>
               <List sx={{display: 'flex', margin: 0, padding: 0}}>
-                {[
-                  {title: 'INICIO', id: 'home'},
-                  {title: 'SERVICIOS', id: 'services'},
-                  {title: 'MARCAS ALIADAS', id: 'allied_brands'},
-                  {title: 'NOSOTROS', id: 'projects'},
-                  {title: 'CONTACTANOS', id: 'contact'},
-                ].map(({title, id}) => (
+                {sections.map(({title, id}) => (
                   <ListItem key={id} sx={{display: 'inline-block', padding: 0}}>
                     <Link
-                      onClick={e => {
-                        e.preventDefault()
-                        const target = document.getElementById(id)
-                        if (target) {
-                          target.scrollIntoView({behavior: 'smooth'})
-                        }
-                      }}
+                      onClick={() => goToElement(id)}
                       href={`#${id}`}
                       sx={{
                         padding: '10px 15px',

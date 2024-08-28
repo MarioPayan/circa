@@ -36,3 +36,6 @@ class Data:
 
     def get_variety_by_slug(self, slug):
         return self.get(slug, self.varieties)
+
+
+data = Data()

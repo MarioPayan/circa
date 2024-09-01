@@ -1,6 +1,12 @@
 import React, {useEffect, useState} from 'react'
 import {styled} from '@mui/system'
-import {Box, IconButton, List, ListItem, Link, useTheme, useMediaQuery} from '@mui/material'
+import Box from '@mui/material/Box'
+import IconButton from '@mui/material/IconButton'
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
+import Link from '@mui/material/Link'
+import {useTheme} from '@mui/material/styles'
+import useMediaQuery from '@mui/material/useMediaQuery'
 
 import Sidebar from '../Nav/Sidebar'
 import Backdrop from '../Elements/Backdrop'
@@ -78,7 +84,7 @@ export default function TopNavbar() {
   )
 }
 
-const Wrapper = styled(Box)(({theme}) => ({
+const Wrapper = styled(Box)({
   width: '100%',
   position: 'relative',
   top: 0,
@@ -87,9 +93,9 @@ const Wrapper = styled(Box)(({theme}) => ({
   backgroundColor: 'white',
   boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
   transition: 'height 0.3s ease',
-}))
+})
 
-const NavInner = styled(Box)(({theme, isMobile}) => ({
+const NavInner = styled(Box)(({isMobile}) => ({
   position: 'relative',
   height: '100%',
   display: 'flex',
@@ -98,11 +104,11 @@ const NavInner = styled(Box)(({theme, isMobile}) => ({
   padding: '0 20px',
 }))
 
-const BottomBar = styled(Box)(({theme}) => ({
+const BottomBar = styled(Box)({
   height: '7px', // Ajusta el tamaño de la barra aquí
   backgroundColor: '#834227',
   width: '100%',
   position: 'relative',
   bottom: 0,
   left: 0,
-}))
+})

@@ -5,11 +5,7 @@ import {Button} from '@mui/material'
 // Componente FullButton
 export default function FullButton({title, action, border}) {
   return (
-    <Wrapper
-      variant='contained'
-      onClick={action ? () => action() : null}
-      border={border} // Prop usado para estilizar el componente
-    >
+    <Wrapper variant='contained' onClick={action ? () => action() : null} border={border}>
       {title}
     </Wrapper>
   )
@@ -17,7 +13,6 @@ export default function FullButton({title, action, border}) {
 
 // Componente estilizado usando @mui/system
 const Wrapper = styled(Button, {
-  // Asegura que el prop `border` no se pase al DOM
   shouldForwardProp: prop => prop !== 'border',
 })(({border}) => ({
   border: border ? '1px solid #707070' : '1px solid #7620ff',

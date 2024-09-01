@@ -1,5 +1,8 @@
 import React from 'react'
-import {Box, Typography, useTheme, useMediaQuery} from '@mui/material'
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
+import {useTheme} from '@mui/material/styles'
+import useMediaQuery from '@mui/material/useMediaQuery'
 import ServiceBox from '../Elements/ServiceBox'
 import ClientSlider from '../Elements/ClientSlider'
 
@@ -36,7 +39,7 @@ export default function Services() {
             <Box sx={CardStyle}>
               <ServiceBox
                 icon='roller'
-                title='EXPERIENCIAS '
+                title='EXPERIENCIAS'
                 subtitle='Realizamos talleres, catas de café, visitas a fincas y espacios donde podamos conocer y disfrutar del mundo del cafe de especialidad.'
               />
             </Box>

@@ -1,5 +1,10 @@
 import React from 'react'
-import {Box, Typography, Button, useTheme, useMediaQuery} from '@mui/material'
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
+import Button from '@mui/material/Button'
+import {useTheme} from '@mui/material/styles'
+import useMediaQuery from '@mui/material/useMediaQuery'
+
 import AddImage2 from '../../assets/img/add/add2.png'
 
 export default function Projects() {
@@ -28,6 +33,7 @@ export default function Projects() {
 
             <Typography
               variant='h6'
+              fontWeight='normal'
               sx={{
                 mb: 2,
                 mt: 2,
@@ -47,7 +53,7 @@ export default function Projects() {
                 color: 'white',
                 mt: 2,
                 '&:hover': {
-                  bgcolor: '#61300d', // Cambia esto al color deseado para el hover
+                  bgcolor: '#61300d',
                 },
               }}>
               COMIENZA AQUI

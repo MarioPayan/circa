@@ -1,6 +1,10 @@
 import React from 'react'
 import {styled} from '@mui/system'
-import {Box, Button, Typography, IconButton, List, ListItem, Link, useTheme, useMediaQuery} from '@mui/material'
+import {useTheme} from '@mui/material/styles'
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import ListItem from '@mui/material/ListItem'
+import Link from '@mui/material/Link'
 import CloseIcon from '../../assets/svg/CloseIcon'
 import LogoImg from '../../assets/img/LOGO CIRCA.png'
 
@@ -53,7 +57,7 @@ export default function Sidebar({sidebarOpen, toggleSidebar}) {
 // Estilos usando @mui/system
 const Wrapper = styled(Box, {
   shouldForwardProp: prop => prop !== 'sidebarOpen',
-})(({theme, sidebarOpen}) => ({
+})(({sidebarOpen}) => ({
   width: '400px',
   height: '100vh',
   position: 'fixed',
@@ -71,21 +75,21 @@ const Wrapper = styled(Box, {
   },
 }))
 
-const SidebarHeader = styled(Box)(({theme}) => ({
+const SidebarHeader = styled(Box)({
   padding: '20px 0',
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
-}))
+})
 
-const CloseBtn = styled(Button)(({theme}) => ({
+const CloseBtn = styled(Button)({
   border: 0,
   outline: 'none',
   backgroundColor: 'transparent',
   padding: '10px',
-}))
+})
 
-const UlStyle = styled('ul')(({theme}) => ({
+const UlStyle = styled('ul')({
   padding: '20px 0',
   margin: 0,
   listStyle: 'none',
@@ -96,13 +100,13 @@ const UlStyle = styled('ul')(({theme}) => ({
   li: {
     margin: '10px 0',
   },
-}))
+})
 
-const BottomBar = styled(Box)(({theme}) => ({
+const BottomBar = styled(Box)({
   height: '4px',
   backgroundColor: '#834227',
   width: '100%',
   position: 'absolute',
   bottom: 0,
   left: 0,
-}))
+})

@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {styled} from '@mui/system'
-import {Box, Typography} from '@mui/material'
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
+
 // Assets
 import RollerIcon from '../../assets/svg/Services/RollerIcon'
 import MonitorIcon from '../../assets/svg/Services/MonitorIcon'
@@ -22,8 +24,12 @@ export default function ServiceBox({icon, title, subtitle}) {
   return (
     <Wrapper>
       <IconWrapper>{SelectedIcon}</IconWrapper>
-      <Title variant='h5'>{title}</Title>
-      <Subtitle variant='body2'>{subtitle}</Subtitle>
+      <Title variant='h5' fontWeight='bold'>
+        {title}
+      </Title>
+      <Subtitle variant='h6' fontWeight='normal'>
+        {subtitle}
+      </Subtitle>
     </Wrapper>
   )
 }

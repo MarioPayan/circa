@@ -1,6 +1,8 @@
 import React from 'react'
 import {styled} from '@mui/system'
-import {Box, Typography, Button} from '@mui/material'
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
+import Button from '@mui/material/Button'
 
 export default function ProjectBox({img, title, text, action}) {
   return (
@@ -11,15 +13,17 @@ export default function ProjectBox({img, title, text, action}) {
       <Typography variant='h5' fontWeight='bold' gutterBottom sx={{marginTop: 'inherit'}}>
         {title}
       </Typography>
-      <Typography variant='body2'>{text}</Typography>
+      <Typography variant='h6' fontWeight='normal'>
+        {text}
+      </Typography>
     </Wrapper>
   )
 }
 
 const Wrapper = styled(Box)(({theme}) => ({
   width: '100%',
-  marginTop: theme.spacing(4), // Usa el espaciado del tema
-  textAlign: 'center', // Centra el texto
+  marginTop: theme.spacing(4),
+  textAlign: 'center',
 }))
 
 const ImgButton = styled(Button)(({theme}) => ({
@@ -28,10 +32,10 @@ const ImgButton = styled(Button)(({theme}) => ({
   padding: 0,
   margin: 0,
   '&:hover': {
-    backgroundColor: 'transparent', // Asegura que no haya cambio de fondo en hover
+    backgroundColor: 'transparent',
   },
   '& img': {
-    transition: 'opacity 0.3s', // Añade transición para suavizar el efecto de hover
+    transition: 'opacity 0.3s',
     '&:hover': {
       opacity: 0.5,
     },
@@ -39,7 +43,7 @@ const ImgButton = styled(Button)(({theme}) => ({
 }))
 
 const StyledImg = styled('img')(({theme}) => ({
-  borderRadius: theme.shape.borderRadius, // Usa el radio de borde del tema
-  width: '100%', // Asegura que la imagen ocupe el ancho completo del contenedor
+  borderRadius: theme.shape.borderRadius,
+  width: '100%',
   height: 'auto',
 }))

@@ -1,9 +1,11 @@
 import React from 'react'
-import {Box, Typography, useTheme, useMediaQuery, Link as MuiLink} from '@mui/material'
+import {Link as MuiLink} from '@mui/material'
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
+import {useTheme} from '@mui/material/styles'
+import useMediaQuery from '@mui/material/useMediaQuery'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import FacebookIcon from '@mui/icons-material/Facebook'
-import TwitterIcon from '@mui/icons-material/Twitter'
-import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import LogoImg from '../../assets/img/LOGO CIRCA.png'
 
 export default function Contact() {
@@ -13,9 +15,9 @@ export default function Contact() {
   const iconstyle = {fontSize: 50}
   const iconcolor = {
     color: '#972d07',
-    textDecoration: 'none', // Evita el subrayado
+    textDecoration: 'none',
     '&:hover': {
-      color: '#61300d', // Mantén el color original al pasar el cursor
+      color: '#61300d',
     },
   }
 
@@ -68,12 +70,6 @@ export default function Contact() {
             <MuiLink href='https://www.facebook.com' target='_blank' sx={iconcolor}>
               <FacebookIcon style={iconstyle} />
             </MuiLink>
-            <MuiLink href='https://www.twitter.com' target='_blank' sx={iconcolor}>
-              <TwitterIcon style={iconstyle} />
-            </MuiLink>
-            <MuiLink href='https://www.linkedin.com' target='_blank' sx={iconcolor}>
-              <LinkedInIcon style={iconstyle} />
-            </MuiLink>
           </Box>
         </Box>
 
@@ -98,7 +94,8 @@ export default function Contact() {
             />
           )}
           <Typography
-            variant='body1'
+            variant='h6'
+            fontWeight='normal'
             sx={{
               color: 'black',
               mt: isSmallScreen ? 2 : 3,

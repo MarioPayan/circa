@@ -6,22 +6,22 @@ import {Box} from '@mui/material'
 import ClientLogo01 from '../../assets/img/clients/okafe_logo.png'
 import ClientLogo02 from '../../assets/img/clients/laCortezas.png'
 import ClientLogo03 from '../../assets/img/clients/laMarianela.png'
-// import ClientLogo04 from '../../assets/img/clients/logo04.svg';
-// import ClientLogo05 from '../../assets/img/clients/logo05.svg';
-// import ClientLogo06 from '../../assets/img/clients/logo06.svg';
 
 export default function ClientSlider() {
   const settings = {
     infinite: true,
-    speed: 500,
+    speed: 2000,
+    autoplay: true,
+    autoplaySpeed: 2000,
     slidesToShow: 3,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     arrows: false,
+    cssEase: 'cubic-bezier(0.520, 0.530, 0.515, 0.545)',
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 3,
           slidesToScroll: 2,
         },
       },
@@ -41,45 +41,47 @@ export default function ClientSlider() {
       },
     ],
   }
+
+  const logos = [ClientLogo01, ClientLogo02, ClientLogo03]
+
   return (
-    <Box>
+    <GradientMask>
       <Slider {...settings}>
-        <LogoWrapper>
-          <ImgStyle src={ClientLogo01} alt='client logo' />
-        </LogoWrapper>
-        <LogoWrapper>
-          <ImgStyle src={ClientLogo02} alt='client logo' />
-        </LogoWrapper>
-        <LogoWrapper>
-          <ImgStyle src={ClientLogo03} alt='client logo' />
-        </LogoWrapper>
-        {/* <LogoWrapper>
-          <ImgStyle src={ClientLogo04} alt="client logo" />
-        </LogoWrapper>
-        <LogoWrapper>
-          <ImgStyle src={ClientLogo05} alt="client logo" />
-        </LogoWrapper>
-        <LogoWrapper>
-          <ImgStyle src={ClientLogo06} alt="client logo" />
-        </LogoWrapper>*/}
-        <LogoWrapper>
-          <ImgStyle src={ClientLogo01} alt='client logo' />
-        </LogoWrapper>
-        {/* <LogoWrapper>
-          <ImgStyle src={ClientLogo04} alt="client logo" />
-        </LogoWrapper> */}
-        <LogoWrapper>
-          <ImgStyle src={ClientLogo02} alt='client logo' />
-        </LogoWrapper>
-        <LogoWrapper>
-          <ImgStyle src={ClientLogo03} alt='client logo' />
-        </LogoWrapper>
+        {logos.concat(logos).map((logo, index) => (
+          <LogoWrapper key={index}>
+            <ImgStyle src={logo} alt='client logo' />
+          </LogoWrapper>
+        ))}
       </Slider>
-    </Box>
+    </GradientMask>
   )
 }
 
-const LogoWrapper = styled(Box)(({theme}) => ({
+const GradientMask = styled(Box)({
+  position: 'relative',
+  overflow: 'hidden',
+  '&::before, &::after': {
+    content: '""',
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    width: '5%',
+    zIndex: 1,
+    pointerEvents: 'none',
+  },
+  '&::before': {
+    left: 0,
+    background: 'linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))',
+    border: 'none',
+  },
+  '&::after': {
+    right: 0,
+    background: 'linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))',
+    border: 'none',
+  },
+})
+
+const LogoWrapper = styled(Box)({
   width: '100%',
   height: '100px',
   cursor: 'pointer',
@@ -87,10 +89,10 @@ const LogoWrapper = styled(Box)(({theme}) => ({
     outline: 'none',
     border: '0px',
   },
-}))
+})
 
-const ImgStyle = styled('img')(({theme}) => ({
+const ImgStyle = styled('img')({
   width: '100%',
   height: '100%',
   objectFit: 'contain',
-}))
+})

@@ -1,10 +1,8 @@
 import React from 'react'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-import Button from '@mui/material/Button'
 import {useTheme} from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
-import Logo from '../../assets/img/LOGO CIRCA.png'
 import Logotext from '../../assets/img/LOGO CIRCA TEXTO.png'
 import Logoimg from '../../assets/img/LOGO SOLO.png'
 
@@ -64,20 +62,6 @@ export default function CoffeeSection() {
             <Typography variant='h4' sx={{fontWeight: 'bold', mb: 2}}>
               Tocamos y transformamos la vida de las personas alrededor de una taza de café.
             </Typography>
-
-            {/* <Button
-              variant="contained"
-              sx={{
-                bgcolor: "#8b4513",
-                color: "white",
-                mt: 2,
-                "&:hover": {
-                  bgcolor: "#61300d", // Cambia esto al color deseado para el hover
-                },
-              }}
-            >
-              MÁS INFORMACIÓN
-            </Button> */}
           </Box>
           <Box
             sx={{

@@ -5,6 +5,7 @@ import {useTheme} from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import ServiceBox from '../Elements/ServiceBox'
 import ClientSlider from '../Elements/ClientSlider'
+import Logoimg from '../../assets/img/LOGO SOLO.png'
 
 export default function Services() {
   const theme = useTheme()
@@ -26,6 +27,17 @@ export default function Services() {
     padding: 2,
   }
 
+  const Logo = () => (
+    <Box
+      component='img'
+      src={Logoimg}
+      alt='Coffee'
+      sx={{
+        maxWidth: '100px',
+      }}
+    />
+  )
+
   return (
     <Box id='services'>
       <Box sx={{backgroundColor: 'white', py: 8}}>
@@ -38,21 +50,21 @@ export default function Services() {
           <Box sx={{display: 'flex', flexWrap: 'wrap', gap: 2}}>
             <Box sx={CardStyle}>
               <ServiceBox
-                icon='roller'
+                icon={<Logo />}
                 title='EXPERIENCIAS'
                 subtitle='Realizamos talleres, catas de café, visitas a fincas y espacios donde podamos conocer y disfrutar del mundo del cafe de especialidad.'
               />
             </Box>
             <Box sx={CardStyle}>
               <ServiceBox
-                icon='monitor'
+                icon={<Logo />}
                 title='EDUCACIÓN'
                 subtitle='Cursos, capacitaciones, entrenamiento y asesorías relacionadas a las disciplinas del café y su aplicación al mercado nacional e internacional'
               />
             </Box>
             <Box sx={CardStyle}>
               <ServiceBox
-                icon='browser'
+                icon={<Logo />}
                 title='EMPRESARIAL'
                 subtitle='Somos tus aliados, ofrecemos apoyo con servicio de catering, alquiler de equipos y barras móviles para eventos y asesorias de estructuras operativas para tiendas de café.'
               />
@@ -64,7 +76,7 @@ export default function Services() {
         <Box className='container'>
           <Box sx={{mb: 6, textAlign: isSmallScreen ? 'center' : 'center'}}>
             <Typography variant='h3' sx={TypographyStyle}>
-              Marcas que confian en nosotros
+              Marcas aliadas
             </Typography>
           </Box>
           <Box sx={{py: 6}}>

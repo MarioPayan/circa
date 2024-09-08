@@ -102,11 +102,11 @@ export default function Contact() {
               mr: isSmallScreen ? 0 : 5,
               textAlign: isSmallScreen ? 'center' : 'right',
             }}>
-            Calle 5 # 13-28, San Cayetano
+            Calle 47AN # 5C Norte - 35, La Flora
             <br />
             Cali, Colombia
             <br />
-            +57 3195429508
+            +57 3161801274
           </Typography>
         </Box>
       </Box>

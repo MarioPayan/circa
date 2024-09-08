@@ -4,26 +4,10 @@ import {styled} from '@mui/system'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 
-// Assets
-import RollerIcon from '../../assets/svg/Services/RollerIcon'
-import MonitorIcon from '../../assets/svg/Services/MonitorIcon'
-import BrowserIcon from '../../assets/svg/Services/BrowserIcon'
-import PrinterIcon from '../../assets/svg/Services/PrinterIcon'
-
-// Map of icons
-const icons = {
-  roller: <RollerIcon />,
-  monitor: <MonitorIcon />,
-  browser: <BrowserIcon />,
-  printer: <PrinterIcon />,
-}
-
 export default function ServiceBox({icon, title, subtitle}) {
-  const SelectedIcon = icons[icon] || icons.roller
-
   return (
     <Wrapper>
-      <IconWrapper>{SelectedIcon}</IconWrapper>
+      <IconWrapper>{icon}</IconWrapper>
       <Title variant='h5' fontWeight='bold'>
         {title}
       </Title>

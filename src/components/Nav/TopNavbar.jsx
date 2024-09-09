@@ -10,7 +10,7 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 
 import Sidebar from '../Nav/Sidebar'
 import Backdrop from '../Elements/Backdrop'
-import BurgerIcon from '../../assets/svg/BurgerIcon'
+import MenuIcon from '@mui/icons-material/Menu';
 
 const sections = [
   {title: 'INICIO', id: 'home'},
@@ -40,6 +40,13 @@ export default function TopNavbar() {
       target.scrollIntoView()
     }
   }
+  const iconcolor = {
+    color: '#972d07',
+    textDecoration: 'none',
+    '&:hover': {
+      color: '#61300d',
+    },
+  }
 
   return (
     <>
@@ -49,7 +56,7 @@ export default function TopNavbar() {
         <NavInner isMobile={isMobile}>
           {isMobile ? (
             <IconButton onClick={() => toggleSidebar(!sidebarOpen)} color='inherit'>
-              <BurgerIcon />
+              <MenuIcon fontSize='large' sx={iconcolor} />
             </IconButton>
           ) : (
             <Box display='flex'>

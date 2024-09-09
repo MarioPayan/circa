@@ -1,12 +1,12 @@
 import React from 'react'
-import {Link as MuiLink} from '@mui/material'
+import Link from '@mui/material/Link'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import {useTheme} from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import FacebookIcon from '@mui/icons-material/Facebook'
-import LogoImg from '../../assets/img/LOGO CIRCA.png'
+const LogoImg ='assets/img/LOGO CIRCA.png'
 
 export default function Contact() {
   const theme = useTheme()
@@ -64,12 +64,12 @@ export default function Contact() {
             </>
           )}
           <Box sx={{display: 'flex', gap: 2, mt: isSmallScreen ? 2 : 8}}>
-            <MuiLink href='https://www.instagram.com' target='_blank' sx={iconcolor}>
+            <Link href='https://www.instagram.com' target='_blank' sx={iconcolor}>
               <InstagramIcon style={iconstyle} />
-            </MuiLink>
-            <MuiLink href='https://www.facebook.com' target='_blank' sx={iconcolor}>
+            </Link>
+            <Link href='https://www.facebook.com' target='_blank' sx={iconcolor}>
               <FacebookIcon style={iconstyle} />
-            </MuiLink>
+            </Link>
           </Box>
         </Box>
 
@@ -102,11 +102,11 @@ export default function Contact() {
               mr: isSmallScreen ? 0 : 5,
               textAlign: isSmallScreen ? 'center' : 'right',
             }}>
-            Calle 5 # 13-28, San Cayetano
+            Calle 47AN # 5C Norte - 35
             <br />
             Cali, Colombia
             <br />
-            +57 3195429508
+            +57 3161801274
           </Typography>
         </Box>
       </Box>

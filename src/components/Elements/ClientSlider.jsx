@@ -3,9 +3,9 @@ import Slider from 'react-slick'
 import {styled} from '@mui/system'
 import {Box} from '@mui/material'
 // Assets
-import ClientLogo01 from '../../assets/img/clients/okafe_logo.png'
-import ClientLogo02 from '../../assets/img/clients/laCortezas.png'
-import ClientLogo03 from '../../assets/img/clients/laMarianela.png'
+const ClientLogo01 = 'assets/img/clients/okafe_logo.png'
+const ClientLogo02 = 'assets/img/clients/laCortezas.png'
+const ClientLogo03 = 'assets/img/clients/laMarianela.png'
 
 export default function ClientSlider() {
   const settings = {

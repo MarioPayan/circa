@@ -5,16 +5,38 @@ import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import ListItem from '@mui/material/ListItem'
 import Link from '@mui/material/Link'
-import CloseIcon from '../../assets/svg/CloseIcon'
-import LogoImg from '../../assets/img/LOGO CIRCA.png'
+import CloseIcon from '@mui/icons-material/Close';
+const LogoImg = 'assets/img/LOGO CIRCA.png'
+
+const sections = [
+  {title: 'INICIO', id: 'home'},
+  {title: 'SERVICIOS', id: 'services'},
+  {title: 'MARCAS ALIADAS', id: 'allied_brands'},
+  {title: 'NOSOTROS', id: 'projects'},
+  {title: 'CONTACTANOS', id: 'contact'},
+]
 
 export default function Sidebar({sidebarOpen, toggleSidebar}) {
   const theme = useTheme()
+  const goToElement = id => {
+    const target = document.getElementById(id)
+    if (target) {
+      target.scrollIntoView()
+    }
+  }
+
+  const iconcolor = {
+    color: '#972d07',
+    textDecoration: 'none',
+    '&:hover': {
+      color: '#61300d',
+    },
+  }
   return (
     <Wrapper sidebarOpen={sidebarOpen}>
       <SidebarHeader sx={{display: 'flex', justifyContent: 'flex-end'}}>
         <CloseBtn onClick={() => toggleSidebar(!sidebarOpen)} className='pointer'>
-          <CloseIcon />
+           <CloseIcon sx={iconcolor} fontSize='large'/>
         </CloseBtn>
       </SidebarHeader>
       <Box
@@ -29,10 +51,11 @@ export default function Sidebar({sidebarOpen, toggleSidebar}) {
       />
 
       <UlStyle>
-        {['INICIO', 'SERVICIOS', 'NOSOTROS', 'MARCAS ALIADAS', 'CONTACTANOS'].map(text => (
-          <ListItem key={text} sx={{padding: 0, justifyContent: 'center'}}>
+        {sections.map(({title, id}) => (
+          <ListItem key={id} sx={{padding: 0, justifyContent: 'center'}}>
             <Link
-              href={`#${text}`}
+              onClick={() =>{ goToElement(id);toggleSidebar(!sidebarOpen)}}
+              href={`#${id}`}
               sx={{
                 display: 'block',
                 padding: '10px 15px',
@@ -45,7 +68,7 @@ export default function Sidebar({sidebarOpen, toggleSidebar}) {
                   color: theme.palette.primary.main,
                 },
               }}>
-              {text.charAt(0).toUpperCase() + text.slice(1)}
+              {title}
             </Link>
           </ListItem>
         ))}

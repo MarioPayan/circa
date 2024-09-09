@@ -5,7 +5,7 @@ import Button from '@mui/material/Button'
 import {useTheme} from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 
-import AddImage2 from '../../assets/img/add/add2.png'
+const AddImage2 = 'assets/img/add/add2.png'
 
 export default function Projects() {
   const theme = useTheme()
@@ -47,7 +47,7 @@ export default function Projects() {
             </Typography>
             <Button
               variant='contained'
-              href='https://wa.link/rmo5e7'
+              href='https://wa.link/i1ple9'
               sx={{
                 bgcolor: '#8b4513',
                 color: 'white',

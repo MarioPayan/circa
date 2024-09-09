@@ -5,6 +5,9 @@ import Landing from './screens/Landing.jsx'
 
 const theme = createTheme({
   palette: {
+    primary: {
+      main: '#61300d', 
+    },
     grey: {
       200: '#eeeeee',
       900: '#212121',

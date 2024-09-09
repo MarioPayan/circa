@@ -6,9 +6,9 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 import ProjectBox from '../Elements/ProjectBox'
 
 // Assets
-import ProjectImg1 from '../../assets/img/projects/1.png'
-import ProjectImg2 from '../../assets/img/projects/2.png'
-import ProjectImg3 from '../../assets/img/projects/3.png'
+const ProjectImg1 = 'assets/img/projects/1.png'
+const ProjectImg2 = 'assets/img/projects/2.png'
+const ProjectImg3 = 'assets/img/projects/3.png'
 
 export default function Projects() {
   const theme = useTheme()

@@ -10,7 +10,7 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 
 import Sidebar from '../Nav/Sidebar'
 import Backdrop from '../Elements/Backdrop'
-import MenuIcon from '@mui/icons-material/Menu';
+import MenuIcon from '@mui/icons-material/Menu'
 
 const sections = [
   {title: 'INICIO', id: 'home'},

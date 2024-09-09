@@ -5,7 +5,7 @@ import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import ListItem from '@mui/material/ListItem'
 import Link from '@mui/material/Link'
-import CloseIcon from '@mui/icons-material/Close';
+import CloseIcon from '@mui/icons-material/Close'
 const LogoImg = 'assets/img/LOGO CIRCA.png'
 
 const sections = [
@@ -36,7 +36,7 @@ export default function Sidebar({sidebarOpen, toggleSidebar}) {
     <Wrapper sidebarOpen={sidebarOpen}>
       <SidebarHeader sx={{display: 'flex', justifyContent: 'flex-end'}}>
         <CloseBtn onClick={() => toggleSidebar(!sidebarOpen)} className='pointer'>
-           <CloseIcon sx={iconcolor} fontSize='large'/>
+          <CloseIcon sx={iconcolor} fontSize='large' />
         </CloseBtn>
       </SidebarHeader>
       <Box
@@ -54,7 +54,10 @@ export default function Sidebar({sidebarOpen, toggleSidebar}) {
         {sections.map(({title, id}) => (
           <ListItem key={id} sx={{padding: 0, justifyContent: 'center'}}>
             <Link
-              onClick={() =>{ goToElement(id);toggleSidebar(!sidebarOpen)}}
+              onClick={() => {
+                goToElement(id)
+                toggleSidebar(!sidebarOpen)
+              }}
               href={`#${id}`}
               sx={{
                 display: 'block',
@@ -123,13 +126,4 @@ const UlStyle = styled('ul')({
   li: {
     margin: '10px 0',
   },
-})
-
-const BottomBar = styled(Box)({
-  height: '4px',
-  backgroundColor: '#834227',
-  width: '100%',
-  position: 'absolute',
-  bottom: 0,
-  left: 0,
 })

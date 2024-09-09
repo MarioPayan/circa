@@ -6,9 +6,7 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 import ProjectBox from '../Elements/ProjectBox'
 
 // Assets
-const ProjectImg1 = 'assets/img/projects/1.png'
-const ProjectImg2 = 'assets/img/projects/2.png'
-const ProjectImg3 = 'assets/img/projects/3.png'
+const PersonTemplate = 'assets/img/projects/person_template.png'
 
 export default function Projects() {
   const theme = useTheme()
@@ -47,25 +45,25 @@ export default function Projects() {
             }}>
             <Box sx={CardStyle}>
               <ProjectBox
-                img={ProjectImg1}
+                img={PersonTemplate}
                 title='Mario Alejandro Payan Viafara'
-                text='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.'
+                text='Inversionista con visión y tomador de café profesional'
                 action={() => alert('clicked')}
               />
             </Box>
             <Box sx={CardStyle}>
               <ProjectBox
-                img={ProjectImg2}
+                img={PersonTemplate}
                 title='Jorge Andrés Silva Prieto'
-                text='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.'
+                text='El mejor barista de la ciudad y el mejor amigo de todos'
                 action={() => alert('clicked')}
               />
             </Box>
             <Box sx={CardStyle}>
               <ProjectBox
-                img={ProjectImg3}
+                img={PersonTemplate}
                 title='María Camila Restrepo Agudelo'
-                text='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.'
+                text='Artista del café y columna vertebral del equipo'
                 action={() => alert('clicked')}
               />
             </Box>

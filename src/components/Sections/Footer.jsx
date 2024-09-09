@@ -6,7 +6,7 @@ import {useTheme} from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import FacebookIcon from '@mui/icons-material/Facebook'
-const LogoImg ='assets/img/LOGO CIRCA.png'
+const LogoImg = 'assets/img/LOGO CIRCA.png'
 
 export default function Contact() {
   const theme = useTheme()
@@ -64,7 +64,7 @@ export default function Contact() {
             </>
           )}
           <Box sx={{display: 'flex', gap: 2, mt: isSmallScreen ? 2 : 8}}>
-            <Link href='https://www.instagram.com' target='_blank' sx={iconcolor}>
+            <Link href='https://www.instagram.com/circacoffee.co/' target='_blank' sx={iconcolor}>
               <InstagramIcon style={iconstyle} />
             </Link>
             <Link href='https://www.facebook.com' target='_blank' sx={iconcolor}>
@@ -102,7 +102,7 @@ export default function Contact() {
               mr: isSmallScreen ? 0 : 5,
               textAlign: isSmallScreen ? 'center' : 'right',
             }}>
-            Calle 47AN # 5C Norte - 35
+            Calle 47AN # 5C Norte - 35, La Flora
             <br />
             Cali, Colombia
             <br />

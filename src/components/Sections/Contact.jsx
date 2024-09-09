@@ -5,7 +5,7 @@ import Button from '@mui/material/Button'
 import {useTheme} from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 
-const AddImage2 = 'assets/img/add/add2.png'
+const especialista = 'assets/img/projects/especialista.jpeg'
 
 export default function Projects() {
   const theme = useTheme()
@@ -47,7 +47,7 @@ export default function Projects() {
             </Typography>
             <Button
               variant='contained'
-              href='https://wa.link/i1ple9'
+              href='https://wa.me/573161801274?text=Hola!%20Quisiera%20saber%20m%C3%A1s%20sobre%20su%20caf%C3%A9'
               sx={{
                 bgcolor: '#8b4513',
                 color: 'white',
@@ -67,7 +67,7 @@ export default function Projects() {
               overflow: 'hidden',
             }}>
             <img
-              src={AddImage2}
+              src={especialista}
               alt='Café'
               style={{
                 width: '100%',

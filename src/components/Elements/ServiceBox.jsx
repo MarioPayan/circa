@@ -3,24 +3,11 @@ import PropTypes from 'prop-types'
 import {styled} from '@mui/system'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-const Logoimg = 'assets/img/LOGO SOLO.png'
-
-
-
-// Map of icons
-const icons = {
-  roller: <img src={Logoimg} alt="Roller Icon"  />,
-  monitor: <img src={Logoimg}  alt="Monitor Icon"  />,
-  browser: <img src={Logoimg}  alt="Browser Icon" />,
-  printer: <img src={Logoimg} alt="Printer Icon" />,
-}
 
 export default function ServiceBox({icon, title, subtitle}) {
-  const SelectedIcon = icons[icon] || icons.roller
-
   return (
     <Wrapper>
-      <IconWrapper>{SelectedIcon}</IconWrapper>
+      <IconWrapper>{icon}</IconWrapper>
       <Title variant='h5' fontWeight='bold'>
         {title}
       </Title>
@@ -45,13 +32,13 @@ const Wrapper = styled(Box)(({theme}) => ({
   padding: theme.spacing(2),
 }))
 
-const IconWrapper = styled(Box)(({ theme }) => ({
+const IconWrapper = styled(Box)(({theme}) => ({
   display: 'flex',
   justifyContent: 'center',
   marginBottom: theme.spacing(2),
   '& img': {
     maxWidth: '100px', // Tamaño máximo para las imágenes
-    height: 'auto',    // Mantener la proporción de la imagen
+    height: 'auto', // Mantener la proporción de la imagen
     '@media (max-width: 600px)': {
       maxWidth: '80px', // Tamaño menor para pantallas pequeñas
     },

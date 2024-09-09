@@ -26,7 +26,7 @@ const Wrapper = styled(Box)(({theme}) => ({
   textAlign: 'center',
 }))
 
-const ImgButton = styled(Button)(({theme}) => ({
+const ImgButton = styled(Button)({
   backgroundColor: 'transparent',
   border: 0,
   padding: 0,
@@ -40,7 +40,7 @@ const ImgButton = styled(Button)(({theme}) => ({
       opacity: 0.5,
     },
   },
-}))
+})
 
 const StyledImg = styled('img')(({theme}) => ({
   borderRadius: theme.shape.borderRadius,

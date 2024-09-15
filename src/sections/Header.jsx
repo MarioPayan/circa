@@ -9,6 +9,7 @@ const Logoimg = 'assets/img/LOGO SOLO.png'
 export default function CoffeeSection() {
   const theme = useTheme()
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'))
+  const content = 'Tocamos y transformamos la vida de las personas alrededor de una taza de café.'
 
   return (
     <Box id='home'>
@@ -60,7 +61,7 @@ export default function CoffeeSection() {
               }}
             />
             <Typography variant='h4' sx={{fontWeight: 'bold', mb: 2}}>
-              Tocamos y transformamos la vida de las personas alrededor de una taza de café.
+              {content}
             </Typography>
           </Box>
           <Box

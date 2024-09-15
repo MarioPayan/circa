@@ -1,11 +1,11 @@
 import React from 'react'
 // Sections
-import TopNavbar from '../components/Nav/TopNavbar'
-import Header from '../components/Sections/Header'
-import Services from '../components/Sections/Services'
-import Contact from '../components/Sections/Contact'
-import Projects from '../components/Sections/Projects'
-import Footer from '../components/Sections/Footer'
+import TopNavbar from 'components/TopNavbar'
+import Header from 'sections/Header'
+import Services from 'sections/Services'
+import Contact from 'sections/Contact'
+import Projects from 'sections/Projects'
+import Footer from 'sections/Footer'
 
 export default function Landing() {
   return (

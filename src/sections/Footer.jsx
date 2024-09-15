@@ -11,6 +11,10 @@ const LogoImg = 'assets/img/LOGO CIRCA.png'
 export default function Contact() {
   const theme = useTheme()
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'))
+  const slogan = 'Conectar y transformar la vida de las personas al rededor de una tasa de café.'
+  const direction = 'Calle 47AN # 5C Norte - 35, La Flora'
+  const city = 'Cali, Colombia'
+  const phonenumber = '+57 317 4073736'
 
   const iconstyle = {fontSize: 50}
   const iconcolor = {
@@ -43,7 +47,7 @@ export default function Contact() {
           }}>
           {!isSmallScreen && (
             <Typography variant='h4' sx={{color: 'black', fontWeight: 'bold'}}>
-              Conectar y transformar la vida de las personas al rededor de una tasa de café.
+              {slogan}
             </Typography>
           )}
           {isSmallScreen && (
@@ -59,7 +63,7 @@ export default function Contact() {
                 }}
               />
               <Typography variant='h5' sx={{color: 'black', fontWeight: 'bold', mb: 2}}>
-                Conectar y transformar la vida de las personas al rededor de una tasa de café.
+                {slogan}
               </Typography>
             </>
           )}
@@ -102,11 +106,11 @@ export default function Contact() {
               mr: isSmallScreen ? 0 : 5,
               textAlign: isSmallScreen ? 'center' : 'right',
             }}>
-            Calle 47AN # 5C Norte - 35, La Flora
+            {direction}
             <br />
-            Cali, Colombia
+            {city}
             <br />
-            +57 3161801274
+            {phonenumber}
           </Typography>
         </Box>
       </Box>

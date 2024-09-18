@@ -8,8 +8,8 @@ import Link from '@mui/material/Link'
 import {useTheme} from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 
-import Sidebar from '../Nav/Sidebar'
-import Backdrop from '../Elements/Backdrop'
+import Sidebar from 'components/Sidebar'
+import Backdrop from 'components/Backdrop'
 import MenuIcon from '@mui/icons-material/Menu'
 
 const sections = [

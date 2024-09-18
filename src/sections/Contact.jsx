@@ -10,6 +10,10 @@ const especialista = 'assets/img/projects/especialista.jpeg'
 export default function Projects() {
   const theme = useTheme()
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'))
+  const title = 'Aprende y disfruta del café con nuestros especialistas'
+  const content =
+    'Somos un grupo de personas apasionadas y entusiastas del complejo pero increíble mundo del café de especialidad, que a través de los años hemos podido recolectar semillas de conocimiento los cuales compartimos en cada curso, taller y actividad con el fin de conectarlos al grano, su cultura, sus personas y el universo que lo rodea.'
+  const textButton = 'COMIENZA AQUI'
 
   return (
     <Box id='contact' sx={{width: '100%', backgroundColor: '#fff'}}>
@@ -28,7 +32,7 @@ export default function Projects() {
               textAlign: isSmallScreen ? 'center' : 'left',
             }}>
             <Typography variant='h3' sx={{fontWeight: 'bold', color: '#972d07'}}>
-              Aprende y disfruta del café con nuestros especialistas
+              {title}
             </Typography>
 
             <Typography
@@ -40,14 +44,11 @@ export default function Projects() {
                 color: 'black',
                 textAlign: isSmallScreen ? 'justify' : 'left',
               }}>
-              Somos un grupo de personas apasionadas y entusiastas del complejo pero increíble mundo del café de
-              especialidad, que a través de los años hemos podido recolectar semillas de conocimiento los cuales
-              compartimos en cada curso, taller y actividad con el fin de conectarlos al grano, su cultura, sus personas
-              y el universo que lo rodea.
+              {content}
             </Typography>
             <Button
               variant='contained'
-              href='https://wa.me/573161801274?text=Hola!%20Quisiera%20saber%20m%C3%A1s%20sobre%20su%20caf%C3%A9'
+              href='https://wa.me/573174073736?text=Hola!%20Quisiera%20saber%20m%C3%A1s%20sobre%20su%20caf%C3%A9'
               sx={{
                 bgcolor: '#8b4513',
                 color: 'white',
@@ -56,7 +57,7 @@ export default function Projects() {
                   bgcolor: '#61300d',
                 },
               }}>
-              COMIENZA AQUI
+              {textButton}
             </Button>
           </Box>
           <Box

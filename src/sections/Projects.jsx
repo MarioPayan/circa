@@ -3,14 +3,33 @@ import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import {useTheme} from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
-import ProjectBox from '../Elements/ProjectBox'
+import ProjectBox from 'components/ProjectBox'
 
 // Assets
 const PersonTemplate = 'assets/img/projects/person_template.png'
 
+const ourTeam = [
+  {
+    img: PersonTemplate,
+    title: 'Mario Alejandro Payan Viafara',
+    text: 'Inversionista con visión y tomador de café profesional',
+  },
+  {
+    img: PersonTemplate,
+    title: 'Jorge Andrés Silva Prieto',
+    text: 'El mejor barista de la ciudad y el mejor amigo de todos',
+  },
+  {
+    img: PersonTemplate,
+    title: 'María Camila Restrepo Agudelo',
+    text: 'Artista del café y columna vertebral del equipo',
+  },
+]
+
 export default function Projects() {
   const theme = useTheme()
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'))
+  const title = 'Nuestro Equipo'
   const CardStyle = {
     flexBasis: {
       xs: '100%',
@@ -33,7 +52,7 @@ export default function Projects() {
         <Box className='container' sx={{textAlign: isSmallScreen ? 'center' : 'center'}}>
           <Box sx={{mb: 6}}>
             <Typography variant='h3' sx={{fontWeight: 'bold', color: '#972d07'}}>
-              Nuestro Equipo
+              {title}
             </Typography>
           </Box>
           <Box
@@ -43,30 +62,11 @@ export default function Projects() {
               justifyContent: 'center',
               gap: 2,
             }}>
-            <Box sx={CardStyle}>
-              <ProjectBox
-                img={PersonTemplate}
-                title='Mario Alejandro Payan Viafara'
-                text='Inversionista con visión y tomador de café profesional'
-                action={() => alert('clicked')}
-              />
-            </Box>
-            <Box sx={CardStyle}>
-              <ProjectBox
-                img={PersonTemplate}
-                title='Jorge Andrés Silva Prieto'
-                text='El mejor barista de la ciudad y el mejor amigo de todos'
-                action={() => alert('clicked')}
-              />
-            </Box>
-            <Box sx={CardStyle}>
-              <ProjectBox
-                img={PersonTemplate}
-                title='María Camila Restrepo Agudelo'
-                text='Artista del café y columna vertebral del equipo'
-                action={() => alert('clicked')}
-              />
-            </Box>
+            {ourTeam.map(({img, title, text}, index) => (
+              <Box sx={CardStyle} key={index}>
+                <ProjectBox img={img} title={title} text={text} action={() => alert('clicked')} />
+              </Box>
+            ))}
           </Box>
         </Box>
       </Box>
